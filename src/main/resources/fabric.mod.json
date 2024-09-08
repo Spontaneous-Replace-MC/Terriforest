@@ -1,8 +1,8 @@
 {
 	"schemaVersion": 1,
-	"id": "spontaneous-replace",
+	"id": "spontaneous-replace-terriforest",
 	"version": "${version}",
-	"name": "自然更替",
+	"name": "自然更替：毛骨森然",
 	"authors": [
 		"§6Saikel Orado"
 	],
@@ -18,6 +18,7 @@
 	},
 	"custom": {
 		"modmenu": {
+			"parent": "spontaneous-replace",
 			"links": {
 				"modmenu.discord": "https://discord.gg/yWNBXSut5k",
 				"modmenu.support.patreon": "https://www.patreon.com/GameGeek_Saikel",
@@ -27,38 +28,32 @@
 		}
 	},
 	"license": "MIT",
-	"icon": "resourcepacks/pack/assets/spontaneous-replace/icon.png",
+	"icon": "resourcepacks/resource/assets/spontaneous-replace/terriforest-icon.png",
 	"environment": "*",
 	"entrypoints": {
 		"fabric-datagen": [
-			"pers.saikel0rado1iu.sr.gen.DataGeneration"
+			"pers.saikel0rado1iu.spontaneousreplace.terriforest.data.DataGen"
 		],
 		"modmenu": [
-			"pers.saikel0rado1iu.sr.ModMenu"
+			"pers.saikel0rado1iu.spontaneousreplace.terriforest.client.ModMenu"
 		],
 		"main": [
-			"pers.saikel0rado1iu.sr.Main"
+			"pers.saikel0rado1iu.spontaneousreplace.terriforest.Main"
 		],
 		"client": [
-			"pers.saikel0rado1iu.sr.Client"
+			"pers.saikel0rado1iu.spontaneousreplace.terriforest.client.Client"
 		],
 		"preLaunch": [
-			"pers.saikel0rado1iu.sr.PreLaunch"
+			"pers.saikel0rado1iu.spontaneousreplace.terriforest.Launch"
 		]
 	},
-	"mixins": [
-		"spontaneous-replace.mixins.json",
-		{
-			"config": "spontaneous-replace.client.mixins.json",
-			"environment": "client"
-		}
-	],
 	"depends": {
 		"java": ">=17",
 		"minecraft": ">=1.20.3",
-		"fabricloader": ">=0.15.6",
+		"fabricloader": ">=0.15.11",
 		"fabric-api": ">=0.91.1",
-		"silk-api": ">=1.20.4-0.2.1"
+		"silk-api": ">=1.20.4-0.2.1",
+		"spontaneous-replace": ">=1.20.4-1.0.0"
 	},
 	"suggests": {
 		"another-mod": "*"
