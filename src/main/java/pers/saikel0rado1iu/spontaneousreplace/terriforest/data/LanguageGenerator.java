@@ -148,7 +148,7 @@ interface LanguageGenerator {
 		@Override
 		public void generateTranslations(TranslationBuilder translationBuilder) {
 			translationBuilder.add(comment("note"), "原生語言為簡體中文(zh_cn)");
-			translationBuilder.add(i18nName(Terriforest.INSTANCE), "§3「毛骨森然」拓展包");
+			translationBuilder.add(i18nName(Terriforest.INSTANCE), "§3「毛骨森然」擴展包");
 			translationBuilder.add(i18nSummary(Terriforest.INSTANCE), "添加咗多種奇異樹木與怪異嘅生物羣落嘅「自然更替」擴展");
 			translationBuilder.add(i18nDesc(Terriforest.INSTANCE), """
 					§r　　當·Minecraft·中擁有一些怪異嘅奇妙自然景觀時會發生咩呢？呢個就係本擴展包帶畀你嘅體驗！
