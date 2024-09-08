@@ -59,19 +59,19 @@ interface LanguageGenerator {
 			translationBuilder.add(i18nDesc(Terriforest.INSTANCE), """
 					§r  What happens when you have some bizarre and wonderful natural landscapes in Minecraft? That's the experience this expansion pack brings you!
 					§r  This expansion pack adds multiple bizarre trees and biomes, each tree having its unique effects and mechanisms. Go explore! Use these trees to craft brand new equipment!""");
-			translationBuilder.add(WidgetTexts.textKey(SpontaneousReplace.INSTANCE, "homepage"), "Homepage");
-			translationBuilder.add(WidgetTexts.textKey(SpontaneousReplace.INSTANCE, "support"), "Support");
-			translationBuilder.add(WidgetTexts.textKey(SpontaneousReplace.INSTANCE, "community"), "Discord");
-			translationBuilder.add(WidgetTexts.titleKey(SpontaneousReplace.INSTANCE, "changelog"), "Changelog");
-			translationBuilder.add(WidgetTexts.titleKey(SpontaneousReplace.INSTANCE, "target"), "1.0.0 > Target");
-			translationBuilder.add(WidgetTexts.textKey(SpontaneousReplace.INSTANCE, "target"), "    Continue planning and implementing the feature, biomes, items, and tools.");
-			translationBuilder.add(WidgetTexts.textKey(SpontaneousReplace.INSTANCE, "tab.synopsis"), "Synopsis");
-			translationBuilder.add(WidgetTexts.titleKey(SpontaneousReplace.INSTANCE, "tab.synopsis.intro"), "§f§lMod introduction:");
-			translationBuilder.add(WidgetTexts.textKey(SpontaneousReplace.INSTANCE, "tab.synopsis.intro"), """
+			translationBuilder.add(WidgetTexts.textKey(Terriforest.INSTANCE, "homepage"), "Homepage");
+			translationBuilder.add(WidgetTexts.textKey(Terriforest.INSTANCE, "support"), "Support");
+			translationBuilder.add(WidgetTexts.textKey(Terriforest.INSTANCE, "community"), "Discord");
+			translationBuilder.add(WidgetTexts.titleKey(Terriforest.INSTANCE, "changelog"), "Changelog");
+			translationBuilder.add(WidgetTexts.titleKey(Terriforest.INSTANCE, "target"), "1.0.0 > Target");
+			translationBuilder.add(WidgetTexts.textKey(Terriforest.INSTANCE, "target"), "    Continue planning and implementing the feature, biomes, items, and tools.");
+			translationBuilder.add(WidgetTexts.textKey(Terriforest.INSTANCE, "tab.synopsis"), "Synopsis");
+			translationBuilder.add(WidgetTexts.titleKey(Terriforest.INSTANCE, "tab.synopsis.intro"), "§f§lMod introduction:");
+			translationBuilder.add(WidgetTexts.textKey(Terriforest.INSTANCE, "tab.synopsis.intro"), """
 					§r  What happens when you have some bizarre and wonderful natural landscapes in Minecraft? That's the experience this expansion pack brings you!
 					§r  This expansion pack adds multiple bizarre trees and biomes, each tree having its unique effects and mechanisms. Go explore! Use these trees to craft brand new equipment!""");
-			translationBuilder.add(WidgetTexts.titleKey(SpontaneousReplace.INSTANCE, "tab.synopsis.vision"), "§f§lMod Vision:");
-			translationBuilder.add(WidgetTexts.textKey(SpontaneousReplace.INSTANCE, "tab.synopsis.vision"), """
+			translationBuilder.add(WidgetTexts.titleKey(Terriforest.INSTANCE, "tab.synopsis.vision"), "§f§lMod Vision:");
+			translationBuilder.add(WidgetTexts.textKey(Terriforest.INSTANCE, "tab.synopsis.vision"), """
 					§r  I hope to make a gameplay mod that is based on the core of the vanilla game and does not destroy the vanilla gameplay. It is very difficult to develop on this basis. Whether an item is added, how to design data so as not to destroy the balance of the game, These are all points that developers need to consider.
 					§r  If you think the mod is doing a good job, you are welcome to sponsor my project, or translate this mod, thank your very much!""");
 			translationBuilder.add(OptionTexts.rootKey(Settings.SETTINGS), "Setting 'Terriforest' DLC...");
@@ -153,19 +153,19 @@ interface LanguageGenerator {
 			translationBuilder.add(i18nDesc(Terriforest.INSTANCE), """
 					§r　　當·Minecraft·中擁有一些怪異嘅奇妙自然景觀時會發生咩呢？呢個就係本擴展包帶畀你嘅體驗！
 					§r　　本擴展包添加咗多個怪異嘅樹木與生物羣落，每個樹木都有自己獨特嘅效果與機制，去探索吧！利用呢啲樹木製作全新嘅裝備吧！""");
-			translationBuilder.add(WidgetTexts.textKey(SpontaneousReplace.INSTANCE, "homepage"), "模組官網");
-			translationBuilder.add(WidgetTexts.textKey(SpontaneousReplace.INSTANCE, "support"), "支持我們");
-			translationBuilder.add(WidgetTexts.textKey(SpontaneousReplace.INSTANCE, "community"), "官方社羣");
-			translationBuilder.add(WidgetTexts.titleKey(SpontaneousReplace.INSTANCE, "changelog"), "更新日誌");
-			translationBuilder.add(WidgetTexts.titleKey(SpontaneousReplace.INSTANCE, "target"), "1.0.0 > 目標");
-			translationBuilder.add(WidgetTexts.textKey(SpontaneousReplace.INSTANCE, "target"), "　　繼續計劃實現但未實現嘅地物、生物羣落、物品、道具。");
-			translationBuilder.add(WidgetTexts.textKey(SpontaneousReplace.INSTANCE, "tab.synopsis"), "簡介");
-			translationBuilder.add(WidgetTexts.titleKey(SpontaneousReplace.INSTANCE, "tab.synopsis.intro"), "§f§l模組簡介：");
-			translationBuilder.add(WidgetTexts.textKey(SpontaneousReplace.INSTANCE, "tab.synopsis.intro"), """
+			translationBuilder.add(WidgetTexts.textKey(Terriforest.INSTANCE, "homepage"), "模組官網");
+			translationBuilder.add(WidgetTexts.textKey(Terriforest.INSTANCE, "support"), "支持我們");
+			translationBuilder.add(WidgetTexts.textKey(Terriforest.INSTANCE, "community"), "官方社羣");
+			translationBuilder.add(WidgetTexts.titleKey(Terriforest.INSTANCE, "changelog"), "更新日誌");
+			translationBuilder.add(WidgetTexts.titleKey(Terriforest.INSTANCE, "target"), "1.0.0 > 目標");
+			translationBuilder.add(WidgetTexts.textKey(Terriforest.INSTANCE, "target"), "　　繼續計劃實現但未實現嘅地物、生物羣落、物品、道具。");
+			translationBuilder.add(WidgetTexts.textKey(Terriforest.INSTANCE, "tab.synopsis"), "簡介");
+			translationBuilder.add(WidgetTexts.titleKey(Terriforest.INSTANCE, "tab.synopsis.intro"), "§f§l模組簡介：");
+			translationBuilder.add(WidgetTexts.textKey(Terriforest.INSTANCE, "tab.synopsis.intro"), """
 					§r　　當·Minecraft·中擁有一些怪異嘅奇妙自然景觀時會發生咩呢？呢個就係本擴展包帶畀你嘅體驗！
 					§r　　本擴展包添加咗多個怪異嘅樹木與生物羣落，每個樹木都有自己獨特嘅效果與機制，去探索吧！利用呢啲樹木製作全新嘅裝備吧！""");
-			translationBuilder.add(WidgetTexts.titleKey(SpontaneousReplace.INSTANCE, "tab.synopsis.vision"), "§f§l模組願景：");
-			translationBuilder.add(WidgetTexts.textKey(SpontaneousReplace.INSTANCE, "tab.synopsis.vision"), """
+			translationBuilder.add(WidgetTexts.titleKey(Terriforest.INSTANCE, "tab.synopsis.vision"), "§f§l模組願景：");
+			translationBuilder.add(WidgetTexts.textKey(Terriforest.INSTANCE, "tab.synopsis.vision"), """
 					§r　　我希望做一個基於原版遊戲內核，不破壞原版遊戲玩法嘅玩法類模組。在這基礎上進行開發十分困難，一件物品是否加入，怎樣設計數據才不會破壞遊戲平衡性，這些都是開發者需要考慮嘅點。
 					§r　　如果你覺得模組做嘅不錯，歡迎對我嘅項目進行贊助，或者對此模組進行翻譯，十分感謝你們!""");
 			translationBuilder.add(OptionTexts.rootKey(Settings.SETTINGS), "「毛骨森然」拓展包設定⋯⋯");
@@ -200,19 +200,19 @@ interface LanguageGenerator {
 			translationBuilder.add(i18nDesc(Terriforest.INSTANCE), """
 					§r　　當·Minecraft·中擁有一些怪異的奇妙自然景觀時會發生什麼呢？這就是本擴充套件帶給你的體驗！
 					§r　　本擴充套件添加了多個怪異的樹木與生態域，每個樹木都有自己獨特的效果與機制，去探索吧！利用這些樹木製作全新的裝備吧！""");
-			translationBuilder.add(WidgetTexts.textKey(SpontaneousReplace.INSTANCE, "homepage"), "模組官網");
-			translationBuilder.add(WidgetTexts.textKey(SpontaneousReplace.INSTANCE, "support"), "支援我們");
-			translationBuilder.add(WidgetTexts.textKey(SpontaneousReplace.INSTANCE, "community"), "官方社群");
-			translationBuilder.add(WidgetTexts.titleKey(SpontaneousReplace.INSTANCE, "changelog"), "更新日誌");
-			translationBuilder.add(WidgetTexts.titleKey(SpontaneousReplace.INSTANCE, "target"), "1.0.0 > 目標");
-			translationBuilder.add(WidgetTexts.textKey(SpontaneousReplace.INSTANCE, "target"), "　　繼續計劃實現但未實現的地物、生態域、物品、道具。");
-			translationBuilder.add(WidgetTexts.textKey(SpontaneousReplace.INSTANCE, "tab.synopsis"), "簡介");
-			translationBuilder.add(WidgetTexts.titleKey(SpontaneousReplace.INSTANCE, "tab.synopsis.intro"), "§f§l模組簡介：");
-			translationBuilder.add(WidgetTexts.textKey(SpontaneousReplace.INSTANCE, "tab.synopsis.intro"), """
+			translationBuilder.add(WidgetTexts.textKey(Terriforest.INSTANCE, "homepage"), "模組官網");
+			translationBuilder.add(WidgetTexts.textKey(Terriforest.INSTANCE, "support"), "支援我們");
+			translationBuilder.add(WidgetTexts.textKey(Terriforest.INSTANCE, "community"), "官方社群");
+			translationBuilder.add(WidgetTexts.titleKey(Terriforest.INSTANCE, "changelog"), "更新日誌");
+			translationBuilder.add(WidgetTexts.titleKey(Terriforest.INSTANCE, "target"), "1.0.0 > 目標");
+			translationBuilder.add(WidgetTexts.textKey(Terriforest.INSTANCE, "target"), "　　繼續計劃實現但未實現的地物、生態域、物品、道具。");
+			translationBuilder.add(WidgetTexts.textKey(Terriforest.INSTANCE, "tab.synopsis"), "簡介");
+			translationBuilder.add(WidgetTexts.titleKey(Terriforest.INSTANCE, "tab.synopsis.intro"), "§f§l模組簡介：");
+			translationBuilder.add(WidgetTexts.textKey(Terriforest.INSTANCE, "tab.synopsis.intro"), """
 					§r　　當·Minecraft·中擁有一些怪異的奇妙自然景觀時會發生什麼呢？這就是本擴充套件帶給你的體驗！
 					§r　　本擴充套件添加了多個怪異的樹木與生態域，每個樹木都有自己獨特的效果與機制，去探索吧！利用這些樹木製作全新的裝備吧！""");
-			translationBuilder.add(WidgetTexts.titleKey(SpontaneousReplace.INSTANCE, "tab.synopsis.vision"), "§f§l模組願景：");
-			translationBuilder.add(WidgetTexts.textKey(SpontaneousReplace.INSTANCE, "tab.synopsis.vision"), """
+			translationBuilder.add(WidgetTexts.titleKey(Terriforest.INSTANCE, "tab.synopsis.vision"), "§f§l模組願景：");
+			translationBuilder.add(WidgetTexts.textKey(Terriforest.INSTANCE, "tab.synopsis.vision"), """
 					§r　　我希望做一個基於原版遊戲核心，不破壞原版遊戲玩法的玩法類模組。在這基礎上進行開發十分困難，一件物品是否加入，怎樣設計資料才不會破壞遊戲平衡性，這些都是開發者需要考慮的點。
 					§r　　如果你覺得模組做的不錯，歡迎對我的專案進行贊助，或者對此模組進行翻譯，十分感謝你們!""");
 			translationBuilder.add(OptionTexts.rootKey(Settings.SETTINGS), "「毛骨森然」擴充套件設定...");
