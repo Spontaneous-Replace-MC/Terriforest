@@ -46,7 +46,6 @@
 			"pers.saikel0rado1iu.spontaneousreplace.terriforest.client.Client"
 		],
 		"preLaunch": [
-			"pers.saikel0rado1iu.spontaneousreplace.Launch",
 			"pers.saikel0rado1iu.spontaneousreplace.terriforest.Launch"
 		]
 	},
