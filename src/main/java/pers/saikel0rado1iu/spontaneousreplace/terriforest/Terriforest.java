@@ -29,6 +29,7 @@ import pers.saikel0rado1iu.silk.api.modpass.pack.DataPack;
 import pers.saikel0rado1iu.silk.api.modpass.pack.ResourcePack;
 import pers.saikel0rado1iu.spontaneousreplace.SpontaneousReplace;
 
+import java.util.List;
 import java.util.Optional;
 
 
@@ -58,11 +59,11 @@ public interface Terriforest extends SpontaneousReplace {
 	
 	@Override
 	default Optional<DataPack> dataPack() {
-		return SpontaneousReplace.INSTANCE.dataPack();
+		return Optional.of(SpontaneousReplace.createDataPack(List.of(SpontaneousReplace.INSTANCE.id(), id())));
 	}
 	
 	@Override
 	default Optional<ResourcePack> resourcePack() {
-		return SpontaneousReplace.INSTANCE.resourcePack();
+		return Optional.of(SpontaneousReplace.createResourcePack(List.of(SpontaneousReplace.INSTANCE.id(), id())));
 	}
 }
