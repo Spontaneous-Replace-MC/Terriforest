@@ -38,12 +38,15 @@
 			"pers.saikel0rado1iu.spontaneousreplace.terriforest.client.ModMenu"
 		],
 		"main": [
+			"pers.saikel0rado1iu.spontaneousreplace.Main",
 			"pers.saikel0rado1iu.spontaneousreplace.terriforest.Main"
 		],
 		"client": [
+			"pers.saikel0rado1iu.spontaneousreplace.client.Client",
 			"pers.saikel0rado1iu.spontaneousreplace.terriforest.client.Client"
 		],
 		"preLaunch": [
+			"pers.saikel0rado1iu.spontaneousreplace.Launch",
 			"pers.saikel0rado1iu.spontaneousreplace.terriforest.Launch"
 		]
 	},
