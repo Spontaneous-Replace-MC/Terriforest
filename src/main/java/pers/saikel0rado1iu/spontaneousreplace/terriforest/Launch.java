@@ -24,9 +24,7 @@
 
 package pers.saikel0rado1iu.spontaneousreplace.terriforest;
 
-import com.google.common.collect.ImmutableList;
 import com.google.common.collect.ImmutableSet;
-import pers.saikel0rado1iu.silk.api.event.modplus.ModifyModResourcePackEvents;
 import pers.saikel0rado1iu.silk.api.modpass.ModData;
 import pers.saikel0rado1iu.silk.api.modpass.ModLaunch;
 import pers.saikel0rado1iu.silk.api.modpass.ModPass;
@@ -34,7 +32,6 @@ import pers.saikel0rado1iu.silk.api.modpass.registry.LaunchRegistrationProvider;
 import pers.saikel0rado1iu.spontaneousreplace.SpontaneousReplace;
 import pers.saikel0rado1iu.spontaneousreplace.terriforest.world.gen.biome.source.BiomeSourceParamListPresets;
 
-import java.util.Map;
 import java.util.Set;
 
 /**
@@ -52,14 +49,6 @@ public final class Launch implements ModLaunch {
 	 */
 	@Override
 	public void main(ModPass mod) {
-		ModifyModResourcePackEvents.MODIFY_GROUP_DATA_PACK_ORDER.register((modPass, orderList) -> {
-			if (!modPass.modData().id().equals(SpontaneousReplace.INSTANCE.modData().id())) return Map.entry(modPass, orderList);
-			return Map.entry(SpontaneousReplace.INSTANCE, ImmutableList.of(SpontaneousReplace.INSTANCE.id(), Terriforest.INSTANCE.id()));
-		});
-		ModifyModResourcePackEvents.MODIFY_GROUP_DATA_PACK_ORDER.register((modPass, orderList) -> {
-			if (!modPass.modData().id().equals(SpontaneousReplace.INSTANCE.modData().id())) return Map.entry(modPass, orderList);
-			return Map.entry(SpontaneousReplace.INSTANCE, ImmutableList.of(SpontaneousReplace.INSTANCE.id(), Terriforest.INSTANCE.id()));
-		});
 	}
 	
 	/**
