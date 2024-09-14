@@ -45,6 +45,7 @@ import net.minecraft.world.gen.WorldPreset;
 import net.minecraft.world.gen.chunk.ChunkGenerator;
 import net.minecraft.world.gen.chunk.ChunkGeneratorSettings;
 import pers.saikel0rado1iu.silk.api.event.modplus.ModifyChunkGeneratorCustomEvents;
+import pers.saikel0rado1iu.silk.api.event.modplus.ModifyChunkGeneratorInstanceEvents;
 import pers.saikel0rado1iu.silk.api.event.modplus.ModifyChunkGeneratorUpgradableEvents;
 import pers.saikel0rado1iu.silk.api.generate.world.WorldPresetEntry;
 import pers.saikel0rado1iu.silk.api.landform.ChunkStorageData;
@@ -74,13 +75,13 @@ public class ClassicChunkGenerator extends ModifiedChunkGenerator {
 		RegistryEntry<MultiNoiseBiomeSourceParameterList> parameters = registryManager.get(RegistryKeys.MULTI_NOISE_BIOME_SOURCE_PARAMETER_LIST)
 				.getEntry(MultiNoiseBiomeSourceParameterLists.OVERWORLD).orElseThrow();
 		RegistryEntry<ChunkGeneratorSettings> settings = registryManager.get(RegistryKeys.CHUNK_GENERATOR_SETTINGS).getEntry(ChunkGeneratorSettings.OVERWORLD).orElseThrow();
-		return new ClassicChunkGenerator(MultiNoiseBiomeSource.create(parameters), ImmutableList.of(), settings, VERSION);
+		return ModifyChunkGeneratorInstanceEvents.MODIFY_DATA_GEN_INSTANCE.invoker().getInstance(new ClassicChunkGenerator(MultiNoiseBiomeSource.create(parameters), ImmutableList.of(), settings, VERSION), registryManager);
 	}
 	
 	private static ClassicChunkGenerator getInstance(Registerable<WorldPreset> registerable, WorldPresetEntry.Registrar registrar) {
 		RegistryEntry<MultiNoiseBiomeSourceParameterList> parameters = registrar.multiNoisePresetLookup.getOrThrow(BiomeSourceParamLists.CLASSIC);
 		RegistryEntry<ChunkGeneratorSettings> settings = registrar.chunkGeneratorSettingsLookup.getOrThrow(ChunkGeneratorSetting.CLASSIC);
-		return new ClassicChunkGenerator(MultiNoiseBiomeSource.create(parameters), ImmutableList.of(), settings, VERSION);
+		return ModifyChunkGeneratorInstanceEvents.MODIFY_REGISTER_INSTANCE.invoker().getInstance(new ClassicChunkGenerator(MultiNoiseBiomeSource.create(parameters), ImmutableList.of(), settings, VERSION), registerable, registrar);
 	}
 	
 	public static void register(RegistryKey<WorldPreset> worldPreset, Registerable<WorldPreset> registerable) {
