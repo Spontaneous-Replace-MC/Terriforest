@@ -51,7 +51,7 @@ import java.util.List;
  * @since 1.0.0
  */
 public class SnapshotChunkGenerator extends ClassicChunkGenerator {
-	private static final String VERSION = "00";
+	private static final String VERSION = DEFAULT_VERSION;
 	
 	public SnapshotChunkGenerator(BiomeSource biomeSource, List<FixedBiomeSource> additionalBiomeSources, RegistryEntry<ChunkGeneratorSettings> settings, String version) {
 		super(biomeSource, additionalBiomeSources, settings, version);

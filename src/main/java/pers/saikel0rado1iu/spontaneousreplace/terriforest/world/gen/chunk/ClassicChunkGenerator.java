@@ -65,7 +65,9 @@ import java.util.function.Predicate;
  * @since 1.0.0
  */
 public class ClassicChunkGenerator extends ModifiedChunkGenerator {
-	private static final String VERSION = "00";
+	public static final String VERSION_DELIMITER = ":";
+	public static final String DEFAULT_VERSION = "00";
+	private static final String VERSION = DEFAULT_VERSION;
 	
 	protected ClassicChunkGenerator(BiomeSource biomeSource, List<FixedBiomeSource> additionalBiomeSources, RegistryEntry<ChunkGeneratorSettings> settings, String version) {
 		super(biomeSource, additionalBiomeSources, settings, version);
@@ -113,8 +115,8 @@ public class ClassicChunkGenerator extends ModifiedChunkGenerator {
 	 */
 	@Override
 	public int compare(String savedVersion) {
-		String[] savedVersions = savedVersion.split(":");
-		String[] versions = version().split(":");
+		String[] savedVersions = savedVersion.split(VERSION_DELIMITER);
+		String[] versions = version().split(VERSION_DELIMITER);
 		int compare = 0;
 		if (savedVersions.length < versions.length) {
 			compare = -1;
