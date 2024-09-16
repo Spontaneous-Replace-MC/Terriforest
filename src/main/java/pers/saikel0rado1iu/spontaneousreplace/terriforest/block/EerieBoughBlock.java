@@ -25,21 +25,14 @@
 package pers.saikel0rado1iu.spontaneousreplace.terriforest.block;
 
 import com.mojang.serialization.MapCodec;
-import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;
 import net.minecraft.block.ConnectingBlock;
 import net.minecraft.block.entity.BlockEntity;
 import net.minecraft.util.math.BlockPos;
-import net.minecraft.world.BlockView;
-import net.minecraft.world.WorldAccess;
 import org.jetbrains.annotations.Nullable;
 import pers.saikel0rado1iu.silk.api.magiccube.PhysicsConnectingBlock;
-import pers.saikel0rado1iu.silk.api.magiccube.entity.PhysicsConnectingBlockEntity;
 import pers.saikel0rado1iu.spontaneousreplace.terriforest.block.entity.EerieBoughBlockEntity;
 import pers.saikel0rado1iu.spontaneousreplace.terriforest.registry.tag.BlockTags;
-
-import java.util.Optional;
-import java.util.function.BiConsumer;
 
 /**
  * <h2 style="color:FFC800">阴森木枝方块</h2>
@@ -64,14 +57,6 @@ public class EerieBoughBlock extends PhysicsConnectingBlock {
 	@Override
 	public boolean isPlaceable(BlockState state) {
 		return true;
-	}
-	
-	@Override
-	public void placeBlock(BlockView world, BlockPos pos, BiConsumer<BlockPos, BlockState> placer) {
-		if (world instanceof WorldAccess access) {
-			access.setBlockState(pos, withConnectionProperties(world, pos, getDefaultState()), Block.NOTIFY_ALL);
-			setConnectionProperties(world, pos, Optional.of((PhysicsConnectingBlockEntity) world.getBlockEntity(pos)));
-		}
 	}
 	
 	/**
