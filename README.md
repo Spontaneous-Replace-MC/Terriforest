@@ -1,7 +1,7 @@
 <!--suppress HtmlDeprecatedAttribute -->
 <div align = "center">
 
-# The Foundational World Expansion Of *Spontaneous-Replace*
+## The Foundational World Expansion Of *Spontaneous-Replace*
 
 [![YouTube Video](https://img.youtube.com/vi/SpDuqRVBmPI/0.jpg)](https://www.youtube.com/watch?v=SpDuqRVBmPI)
 
