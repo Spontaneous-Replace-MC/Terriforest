@@ -1,3 +1,9 @@
+## 1.0.0+bu+1.20.4——2024/10/20
+
+### Change:
+
+- Updated the version number naming convention.
+
 ## 1.20.4-1.0.0+bu——2024/09/25
 
 ### Change：
