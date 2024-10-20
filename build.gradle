@@ -188,7 +188,7 @@ publishing {
 			artifactId = project.archivesBaseName
 			from components.java
 			// 发布源码
-			artifact sourcesJar
+			// artifact sourcesJar
 		}
 	}
 	
