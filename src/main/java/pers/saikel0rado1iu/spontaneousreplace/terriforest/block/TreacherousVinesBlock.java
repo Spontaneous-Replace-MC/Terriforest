@@ -29,6 +29,7 @@ import net.minecraft.block.AbstractPlantStemBlock;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;
 import net.minecraft.block.VineLogic;
+import net.minecraft.client.util.ParticleUtil;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.effect.StatusEffectInstance;
@@ -37,9 +38,7 @@ import net.minecraft.util.math.Direction;
 import net.minecraft.util.math.random.Random;
 import net.minecraft.util.shape.VoxelShape;
 import net.minecraft.world.World;
-import pers.saikel0rado1iu.silk.api.base.common.util.ParticleUtil;
 import pers.saikel0rado1iu.silk.api.base.common.util.TickUtil;
-import pers.saikel0rado1iu.silk.api.spore.EntityUtil;
 import pers.saikel0rado1iu.spontaneousreplace.terriforest.block.treacherous.TreacherousData;
 import pers.saikel0rado1iu.spontaneousreplace.terriforest.entity.effect.StatusEffects;
 
@@ -65,11 +64,7 @@ public class TreacherousVinesBlock extends AbstractPlantStemBlock {
 	public void randomDisplayTick(BlockState state, World world, BlockPos pos, Random random) {
 		super.randomDisplayTick(state, world, pos, random);
 		if (random.nextInt(5) != 0) return;
-		java.util.Random randomValue = new java.util.Random();
-		ParticleUtil.addEffectParticle(world, StatusEffects.ACIDIZE.value(),
-				pos.getX() + EntityUtil.POS_SHIFTING + randomValue.nextDouble(-0.5, 0.5),
-				pos.getY() + EntityUtil.POS_SHIFTING + randomValue.nextDouble(-0.5, 0.5),
-				pos.getZ() + EntityUtil.POS_SHIFTING + randomValue.nextDouble(-0.5, 0.5));
+		ParticleUtil.spawnParticle(world, pos, random, StatusEffects.ACIDIZE.value().createParticle(new StatusEffectInstance(StatusEffects.ACIDIZE)));
 	}
 	
 	/**

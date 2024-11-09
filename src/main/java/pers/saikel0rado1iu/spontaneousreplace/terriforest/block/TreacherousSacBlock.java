@@ -28,8 +28,10 @@ import com.mojang.serialization.MapCodec;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;
 import net.minecraft.block.Blocks;
+import net.minecraft.client.util.ParticleUtil;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.LivingEntity;
+import net.minecraft.entity.effect.StatusEffectInstance;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.entity.projectile.PersistentProjectileEntity;
 import net.minecraft.entity.projectile.ProjectileEntity;
@@ -45,7 +47,6 @@ import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.random.Random;
 import net.minecraft.world.World;
 import net.minecraft.world.event.GameEvent;
-import pers.saikel0rado1iu.silk.api.base.common.util.ParticleUtil;
 import pers.saikel0rado1iu.silk.api.magiccube.TntLikeBlock;
 import pers.saikel0rado1iu.silk.api.spore.EntityUtil;
 import pers.saikel0rado1iu.silk.api.spore.TntLikeEntity;
@@ -86,11 +87,7 @@ public class TreacherousSacBlock extends TntLikeBlock {
 	public void randomDisplayTick(BlockState state, World world, BlockPos pos, Random random) {
 		super.randomDisplayTick(state, world, pos, random);
 		if (random.nextInt(3) != 0) return;
-		java.util.Random randomValue = new java.util.Random();
-		ParticleUtil.addEffectParticle(world, StatusEffects.ACIDIZE.value(),
-				pos.getX() + EntityUtil.POS_SHIFTING + randomValue.nextDouble(-0.5, 0.5),
-				pos.getY() + EntityUtil.POS_SHIFTING + randomValue.nextDouble(-0.5, 0.5),
-				pos.getZ() + EntityUtil.POS_SHIFTING + randomValue.nextDouble(-0.5, 0.5));
+		ParticleUtil.spawnParticle(world, pos, random, StatusEffects.ACIDIZE.value().createParticle(new StatusEffectInstance(StatusEffects.ACIDIZE)));
 	}
 	
 	/**
