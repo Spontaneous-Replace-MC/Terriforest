@@ -24,6 +24,10 @@
 
 package pers.saikel0rado1iu.spontaneousreplace.terriforest.block.treacherous;
 
+import net.minecraft.block.BlockState;
+
+import java.util.function.ToIntFunction;
+
 /**
  * <h2 style="color:FFC800">诡谲数据</h2>
  * 用于储存诡谲类方块的通用数据
@@ -32,7 +36,7 @@ package pers.saikel0rado1iu.spontaneousreplace.terriforest.block.treacherous;
  * @since 1.0.0
  */
 public interface TreacherousData {
-	int LUMINANCE = 5;
-	int STABILITY = 5;
-	float EXPLODE_POWER = 1;
+	ToIntFunction<BlockState> LUMINANCE = state -> 5;
+	ToIntFunction<BlockState> STABILITY = state -> 5;
+	int EXPLODE_POWER = 1;
 }

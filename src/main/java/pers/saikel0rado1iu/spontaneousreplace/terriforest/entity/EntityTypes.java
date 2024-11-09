@@ -24,8 +24,6 @@
 
 package pers.saikel0rado1iu.spontaneousreplace.terriforest.entity;
 
-import net.fabricmc.fabric.api.object.builder.v1.entity.FabricEntityTypeBuilder;
-import net.minecraft.entity.EntityDimensions;
 import net.minecraft.entity.EntityType;
 import net.minecraft.entity.SpawnGroup;
 import pers.saikel0rado1iu.silk.api.spinningjenny.EntityTypeRegistry;
@@ -38,7 +36,8 @@ import pers.saikel0rado1iu.silk.api.spinningjenny.EntityTypeRegistry;
  * @since 1.0.0
  */
 public interface EntityTypes extends EntityTypeRegistry {
-	EntityType<TreacherousSacEntity> TREACHEROUS_SAC = EntityTypeRegistry.registrar(() -> FabricEntityTypeBuilder.<TreacherousSacEntity>create(SpawnGroup.MISC, TreacherousSacEntity::new)
-					.dimensions(EntityDimensions.fixed(1, 1)).build())
+	EntityType<TreacherousSacEntity> TREACHEROUS_SAC = EntityTypeRegistry.registrar(() -> EntityType.Builder
+					.<TreacherousSacEntity>create(TreacherousSacEntity::new, SpawnGroup.MISC)
+					.dimensions(1, 1).build())
 			.register("treacherous_sac");
 }

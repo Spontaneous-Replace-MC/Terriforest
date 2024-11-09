@@ -25,6 +25,7 @@
 package pers.saikel0rado1iu.spontaneousreplace.terriforest.data;
 
 import net.fabricmc.fabric.api.datagen.v1.FabricDataOutput;
+import net.minecraft.registry.RegistryWrapper;
 import pers.saikel0rado1iu.silk.api.codex.OptionTexts;
 import pers.saikel0rado1iu.silk.api.generate.data.LinkedLanguageProvider;
 import pers.saikel0rado1iu.silk.api.landform.gen.chunk.ChunkGeneratorUpgradable;
@@ -38,6 +39,8 @@ import pers.saikel0rado1iu.spontaneousreplace.terriforest.entity.effect.StatusEf
 import pers.saikel0rado1iu.spontaneousreplace.terriforest.sound.SoundEvents;
 import pers.saikel0rado1iu.spontaneousreplace.terriforest.world.gen.WorldPresets;
 
+import java.util.concurrent.CompletableFuture;
+
 /**
  * <h2 style="color:FFC800">语言生成器</h2>
  * 毛骨森然的全球化语言生成器
@@ -47,12 +50,12 @@ import pers.saikel0rado1iu.spontaneousreplace.terriforest.world.gen.WorldPresets
  */
 interface LanguageGenerator {
 	final class EnUs extends LinkedLanguageProvider {
-		EnUs(FabricDataOutput dataOutput) {
-			super(dataOutput, "en_us");
+		EnUs(FabricDataOutput dataOutput, CompletableFuture<RegistryWrapper.WrapperLookup> registryLookup) {
+			super(dataOutput, "en_us", registryLookup);
 		}
 		
 		@Override
-		public void generateTranslations(TranslationBuilder translationBuilder) {
+		public void generateTranslations(RegistryWrapper.WrapperLookup wrapperLookup, TranslationBuilder translationBuilder) {
 			translationBuilder.add(comment("note"), "Origin Language is Simplified Chinese(zh_cn)");
 			translationBuilder.add(i18nName(Terriforest.INSTANCE), "§3'Terriforest' DLC");
 			translationBuilder.add(i18nSummary(Terriforest.INSTANCE), "A SR expansion that adds various exotic trees and bizarre biomes.");
@@ -86,7 +89,7 @@ interface LanguageGenerator {
 			translationBuilder.add(Blocks.TREACHEROUS_SAC, "Treacherous Sac");
 			translationBuilder.add(Blocks.EERIE_BOUGH, "Eerie Bough");
 			translationBuilder.add(Blocks.TREACHEROUS_VINES, "Treacherous Vines");
-			translationBuilder.add(StatusEffects.ACIDIZE, "Acidize");
+			translationBuilder.add(StatusEffects.ACIDIZE.value(), "Acidize");
 			translationBuilder.add(soundSub(SoundEvents.TREACHEROUS_SAC_BREAK), "Treacherous sac break");
 			translationBuilder.add(deathMessage(DamageTypes.ACIDIZE, ""), "%1$s dissolved");
 			translationBuilder.add(deathMessage(DamageTypes.ACIDIZE, "player"), "%1$s dissolved while fighting %2$s");
@@ -94,12 +97,12 @@ interface LanguageGenerator {
 	}
 	
 	final class ZhCn extends LinkedLanguageProvider {
-		ZhCn(FabricDataOutput dataOutput) {
-			super(dataOutput, "zh_cn");
+		ZhCn(FabricDataOutput dataOutput, CompletableFuture<RegistryWrapper.WrapperLookup> registryLookup) {
+			super(dataOutput, "zh_cn", registryLookup);
 		}
 		
 		@Override
-		public void generateTranslations(TranslationBuilder translationBuilder) {
+		public void generateTranslations(RegistryWrapper.WrapperLookup wrapperLookup, TranslationBuilder translationBuilder) {
 			translationBuilder.add(comment("note"), "原生语言");
 			translationBuilder.add(i18nName(Terriforest.INSTANCE), "§3「毛骨森然」拓展包");
 			translationBuilder.add(i18nSummary(Terriforest.INSTANCE), "添加了多种奇异树木与怪异的生物群系的「自然更替」拓展");
@@ -133,7 +136,7 @@ interface LanguageGenerator {
 			translationBuilder.add(Blocks.TREACHEROUS_SAC, "诡谲囊");
 			translationBuilder.add(Blocks.EERIE_BOUGH, "阴森木枝");
 			translationBuilder.add(Blocks.TREACHEROUS_VINES, "诡谲藤");
-			translationBuilder.add(StatusEffects.ACIDIZE, "酸化");
+			translationBuilder.add(StatusEffects.ACIDIZE.value(), "酸化");
 			translationBuilder.add(soundSub(SoundEvents.TREACHEROUS_SAC_BREAK), "诡谲囊：破裂");
 			translationBuilder.add(deathMessage(DamageTypes.ACIDIZE, ""), "%1$s溶解了");
 			translationBuilder.add(deathMessage(DamageTypes.ACIDIZE, "player"), "%1$s在与%2$s战斗时溶解了");
@@ -141,12 +144,12 @@ interface LanguageGenerator {
 	}
 	
 	final class ZhHk extends LinkedLanguageProvider {
-		ZhHk(FabricDataOutput dataOutput) {
-			super(dataOutput, "zh_hk");
+		ZhHk(FabricDataOutput dataOutput, CompletableFuture<RegistryWrapper.WrapperLookup> registryLookup) {
+			super(dataOutput, "zh_hk", registryLookup);
 		}
 		
 		@Override
-		public void generateTranslations(TranslationBuilder translationBuilder) {
+		public void generateTranslations(RegistryWrapper.WrapperLookup wrapperLookup, TranslationBuilder translationBuilder) {
 			translationBuilder.add(comment("note"), "原生語言為簡體中文(zh_cn)");
 			translationBuilder.add(i18nName(Terriforest.INSTANCE), "§3「毛骨森然」擴展包");
 			translationBuilder.add(i18nSummary(Terriforest.INSTANCE), "添加咗多種奇異樹木與怪異嘅生物羣落嘅「自然更替」擴展");
@@ -180,7 +183,7 @@ interface LanguageGenerator {
 			translationBuilder.add(Blocks.TREACHEROUS_SAC, "詭譎囊");
 			translationBuilder.add(Blocks.EERIE_BOUGH, "陰森木枝");
 			translationBuilder.add(Blocks.TREACHEROUS_VINES, "詭譎藤");
-			translationBuilder.add(StatusEffects.ACIDIZE, "酸化");
+			translationBuilder.add(StatusEffects.ACIDIZE.value(), "酸化");
 			translationBuilder.add(soundSub(SoundEvents.TREACHEROUS_SAC_BREAK), "詭譎囊破裂");
 			translationBuilder.add(deathMessage(DamageTypes.ACIDIZE, ""), "%1$s 溶解咗");
 			translationBuilder.add(deathMessage(DamageTypes.ACIDIZE, "player"), "%1$s 同 %2$s 戰鬥時溶解咗");
@@ -188,12 +191,12 @@ interface LanguageGenerator {
 	}
 	
 	final class ZhTw extends LinkedLanguageProvider {
-		ZhTw(FabricDataOutput dataOutput) {
-			super(dataOutput, "zh_tw");
+		ZhTw(FabricDataOutput dataOutput, CompletableFuture<RegistryWrapper.WrapperLookup> registryLookup) {
+			super(dataOutput, "zh_tw", registryLookup);
 		}
 		
 		@Override
-		public void generateTranslations(TranslationBuilder translationBuilder) {
+		public void generateTranslations(RegistryWrapper.WrapperLookup wrapperLookup, TranslationBuilder translationBuilder) {
 			translationBuilder.add(comment("note"), "原生語言為簡體中文(zh_cn)");
 			translationBuilder.add(i18nName(Terriforest.INSTANCE), "§3「毛骨森然」擴充套件");
 			translationBuilder.add(i18nSummary(Terriforest.INSTANCE), "新增了多種奇異樹木與怪異的生態域的「自然更替」擴充套件");
@@ -227,7 +230,7 @@ interface LanguageGenerator {
 			translationBuilder.add(Blocks.TREACHEROUS_SAC, "詭譎囊");
 			translationBuilder.add(Blocks.EERIE_BOUGH, "陰森木枝");
 			translationBuilder.add(Blocks.TREACHEROUS_VINES, "詭譎藤");
-			translationBuilder.add(StatusEffects.ACIDIZE, "酸化");
+			translationBuilder.add(StatusEffects.ACIDIZE.value(), "酸化");
 			translationBuilder.add(soundSub(SoundEvents.TREACHEROUS_SAC_BREAK), "詭譎囊破裂");
 			translationBuilder.add(deathMessage(DamageTypes.ACIDIZE, ""), "%1$s 溶解了");
 			translationBuilder.add(deathMessage(DamageTypes.ACIDIZE, "player"), "%1$s 在與 %1$s 戰鬥時溶解了");

@@ -44,9 +44,10 @@ public class Acidize extends StatusEffect {
 	}
 	
 	@Override
-	public void applyUpdateEffect(LivingEntity entity, int amplifier) {
+	public boolean applyUpdateEffect(LivingEntity entity, int amplifier) {
 		super.applyUpdateEffect(entity, amplifier);
 		entity.damage(entity.getDamageSources().create(DamageTypes.ACIDIZE), 1);
+		return true;
 	}
 	
 	@Override

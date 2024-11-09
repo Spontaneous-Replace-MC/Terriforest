@@ -24,7 +24,7 @@
 
 package pers.saikel0rado1iu.spontaneousreplace.terriforest.block;
 
-import net.fabricmc.fabric.api.object.builder.v1.block.FabricBlockSettings;
+import net.minecraft.block.AbstractBlock;
 import net.minecraft.block.MapColor;
 import net.minecraft.sound.BlockSoundGroup;
 import pers.saikel0rado1iu.silk.api.spinningjenny.BlockRegistry;
@@ -40,15 +40,15 @@ import static net.minecraft.block.Blocks.*;
  * @since 1.0.0
  */
 public interface Blocks extends BlockRegistry {
-	EerieRegolithBlock EERIE_REGOLITH = BlockRegistry.registrar(() -> new EerieRegolithBlock(FabricBlockSettings.copyOf(PODZOL).mapColor(MapColor.BLACK))).register("eerie_regolith");
-	TreacherousSludgeBlock TREACHEROUS_SLUDGE = BlockRegistry.registrar(() -> new TreacherousSludgeBlock(FabricBlockSettings.copyOf(MUD).mapColor(MapColor.TERRACOTTA_ORANGE))).register("treacherous_sludge");
-	EerieRindBlock EERIE_RIND = BlockRegistry.registrar(() -> new EerieRindBlock(FabricBlockSettings.copyOf(CAULDRON).nonOpaque().sounds(BlockSoundGroup.COPPER).mapColor(MapColor.BLACK))).register("eerie_rind");
-	IceEerieRindBlock ICE_EERIE_RIND = BlockRegistry.registrar(() -> new IceEerieRindBlock(FabricBlockSettings.copyOf(EERIE_RIND).slipperiness(ICE.getSlipperiness()).sounds(BlockSoundGroup.COPPER).mapColor(MapColor.LIGHT_BLUE))).register("ice_eerie_rind");
-	LavaEerieRindBlock LAVA_EERIE_RIND = BlockRegistry.registrar(() -> new LavaEerieRindBlock(FabricBlockSettings.copyOf(LAVA_CAULDRON).sounds(BlockSoundGroup.COPPER).mapColor(MapColor.BRIGHT_RED))).register("lava_eerie_rind");
-	WaterEerieRindBlock WATER_EERIE_RIND = BlockRegistry.registrar(() -> new WaterEerieRindBlock(FabricBlockSettings.copyOf(WATER_CAULDRON).sounds(BlockSoundGroup.COPPER).mapColor(MapColor.WATER_BLUE))).register("water_eerie_rind");
-	PowderSnowEerieRindBlock POWDER_SNOW_EERIE_RIND = BlockRegistry.registrar(() -> new PowderSnowEerieRindBlock(FabricBlockSettings.copyOf(POWDER_SNOW_CAULDRON).sounds(BlockSoundGroup.COPPER).mapColor(MapColor.WHITE))).register("powder_snow_eerie_rind");
-	TreacherousSacBlock TREACHEROUS_SAC = BlockRegistry.registrar(() -> new TreacherousSacBlock(FabricBlockSettings.copyOf(DARK_OAK_LOG).strength(DARK_OAK_LOG.getHardness() / 2, 0).luminance(TreacherousData.LUMINANCE).mapColor(MapColor.BROWN))).register("treacherous_sac");
-	EerieBoughBlock EERIE_BOUGH = BlockRegistry.registrar(() -> new EerieBoughBlock(FabricBlockSettings.copyOf(DIAMOND_BLOCK).sounds(BlockSoundGroup.COPPER).mapColor(MapColor.LIGHT_GRAY))).register("eerie_bough");
-	TreacherousVinesBlock TREACHEROUS_VINES = BlockRegistry.registrar(() -> new TreacherousVinesBlock(FabricBlockSettings.copyOf(WEEPING_VINES).luminance(TreacherousData.LUMINANCE).mapColor(MapColor.ORANGE))).register("treacherous_vines");
-	TreacherousVinesPlantBlock TREACHEROUS_VINES_PLANT = BlockRegistry.registrar(() -> new TreacherousVinesPlantBlock(FabricBlockSettings.copyOf(WEEPING_VINES_PLANT).luminance(TreacherousData.LUMINANCE).mapColor(MapColor.ORANGE))).register("treacherous_vines_plant");
+	EerieRegolithBlock EERIE_REGOLITH = BlockRegistry.registrar(() -> new EerieRegolithBlock(AbstractBlock.Settings.copy(PODZOL).mapColor(MapColor.BLACK))).register("eerie_regolith");
+	TreacherousSludgeBlock TREACHEROUS_SLUDGE = BlockRegistry.registrar(() -> new TreacherousSludgeBlock(AbstractBlock.Settings.copy(MUD).mapColor(MapColor.TERRACOTTA_ORANGE))).register("treacherous_sludge");
+	EerieRindBlock EERIE_RIND = BlockRegistry.registrar(() -> new EerieRindBlock(AbstractBlock.Settings.copy(CAULDRON).nonOpaque().sounds(BlockSoundGroup.COPPER).mapColor(MapColor.BLACK))).register("eerie_rind");
+	IceEerieRindBlock ICE_EERIE_RIND = BlockRegistry.registrar(() -> new IceEerieRindBlock(AbstractBlock.Settings.copy(EERIE_RIND).slipperiness(ICE.getSlipperiness()).sounds(BlockSoundGroup.COPPER).mapColor(MapColor.LIGHT_BLUE))).register("ice_eerie_rind");
+	LavaEerieRindBlock LAVA_EERIE_RIND = BlockRegistry.registrar(() -> new LavaEerieRindBlock(AbstractBlock.Settings.copy(LAVA_CAULDRON).sounds(BlockSoundGroup.COPPER).mapColor(MapColor.BRIGHT_RED))).register("lava_eerie_rind");
+	WaterEerieRindBlock WATER_EERIE_RIND = BlockRegistry.registrar(() -> new WaterEerieRindBlock(AbstractBlock.Settings.copy(WATER_CAULDRON).sounds(BlockSoundGroup.COPPER).mapColor(MapColor.WATER_BLUE))).register("water_eerie_rind");
+	PowderSnowEerieRindBlock POWDER_SNOW_EERIE_RIND = BlockRegistry.registrar(() -> new PowderSnowEerieRindBlock(AbstractBlock.Settings.copy(POWDER_SNOW_CAULDRON).sounds(BlockSoundGroup.COPPER).mapColor(MapColor.WHITE))).register("powder_snow_eerie_rind");
+	TreacherousSacBlock TREACHEROUS_SAC = BlockRegistry.registrar(() -> new TreacherousSacBlock(AbstractBlock.Settings.copy(DARK_OAK_LOG).strength(DARK_OAK_LOG.getHardness() / 2, 0).luminance(TreacherousData.LUMINANCE).mapColor(MapColor.BROWN))).register("treacherous_sac");
+	EerieBoughBlock EERIE_BOUGH = BlockRegistry.registrar(() -> new EerieBoughBlock(AbstractBlock.Settings.copy(DIAMOND_BLOCK).sounds(BlockSoundGroup.COPPER).mapColor(MapColor.LIGHT_GRAY))).register("eerie_bough");
+	TreacherousVinesBlock TREACHEROUS_VINES = BlockRegistry.registrar(() -> new TreacherousVinesBlock(AbstractBlock.Settings.copy(WEEPING_VINES).luminance(TreacherousData.LUMINANCE).mapColor(MapColor.ORANGE))).register("treacherous_vines");
+	TreacherousVinesPlantBlock TREACHEROUS_VINES_PLANT = BlockRegistry.registrar(() -> new TreacherousVinesPlantBlock(AbstractBlock.Settings.copy(WEEPING_VINES_PLANT).luminance(TreacherousData.LUMINANCE).mapColor(MapColor.ORANGE))).register("treacherous_vines_plant");
 }

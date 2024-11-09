@@ -66,7 +66,7 @@ public class TreacherousVinesPlantBlock extends AbstractPlantBlock {
 		super.randomDisplayTick(state, world, pos, random);
 		if (random.nextInt(5) != 0) return;
 		java.util.Random randomValue = new java.util.Random();
-		ParticleUtil.addEffectParticle(world, StatusEffects.ACIDIZE,
+		ParticleUtil.addEffectParticle(world, StatusEffects.ACIDIZE.value(),
 				pos.getX() + EntityUtil.POS_SHIFTING + randomValue.nextDouble(-0.5, 0.5),
 				pos.getY() + EntityUtil.POS_SHIFTING + randomValue.nextDouble(-0.5, 0.5),
 				pos.getZ() + EntityUtil.POS_SHIFTING + randomValue.nextDouble(-0.5, 0.5));
@@ -76,11 +76,12 @@ public class TreacherousVinesPlantBlock extends AbstractPlantBlock {
 	 * 玩家接触会酸化
 	 */
 	@Override
-	@SuppressWarnings("deprecation")
 	public void onEntityCollision(BlockState state, World world, BlockPos pos, Entity entity) {
 		super.onEntityCollision(state, world, pos, entity);
 		if (world.isClient) return;
-		if (!(entity instanceof LivingEntity living) || new java.util.Random().nextInt((int) Math.pow(TreacherousData.STABILITY, 3)) != 0) return;
+		if (!(entity instanceof LivingEntity living) || new java.util.Random().nextInt((int) Math.pow(TreacherousData.STABILITY.applyAsInt(state), 3)) != 0) {
+			return;
+		}
 		living.addStatusEffect(new StatusEffectInstance(StatusEffects.ACIDIZE, TickUtil.getTick(3)));
 	}
 	

@@ -24,7 +24,6 @@
 
 package pers.saikel0rado1iu.spontaneousreplace.terriforest.item;
 
-import net.fabricmc.fabric.api.item.v1.FabricItemSettings;
 import net.minecraft.item.BlockItem;
 import net.minecraft.item.Item;
 import pers.saikel0rado1iu.silk.api.spinningjenny.ItemRegistry;
@@ -40,16 +39,16 @@ import pers.saikel0rado1iu.spontaneousreplace.terriforest.block.eerie.EerieRindB
  * @since 1.0.0
  */
 public interface Items extends ItemRegistry {
-	BlockItem EERIE_REGOLITH = ItemRegistry.registrar(() -> new BlockItem(Blocks.EERIE_REGOLITH, new FabricItemSettings())).group(ItemGroups.NATURAL).register("eerie_regolith");
-	BlockItem TREACHEROUS_SLUDGE = ItemRegistry.registrar(() -> new BlockItem(Blocks.TREACHEROUS_SLUDGE, new FabricItemSettings())).group(ItemGroups.NATURAL).register("treacherous_sludge");
-	BlockItem EERIE_RIND = ItemRegistry.registrar(() -> new BlockItem(Blocks.EERIE_RIND, new FabricItemSettings().fireproof())).other(blockItem -> {
+	BlockItem EERIE_REGOLITH = ItemRegistry.registrar(() -> new BlockItem(Blocks.EERIE_REGOLITH, new Item.Settings())).group(ItemGroups.NATURAL).register("eerie_regolith");
+	BlockItem TREACHEROUS_SLUDGE = ItemRegistry.registrar(() -> new BlockItem(Blocks.TREACHEROUS_SLUDGE, new Item.Settings())).group(ItemGroups.NATURAL).register("treacherous_sludge");
+	BlockItem EERIE_RIND = ItemRegistry.registrar(() -> new BlockItem(Blocks.EERIE_RIND, new Item.Settings().fireproof())).other(blockItem -> {
 		EerieRindBehavior.INSTANCE.registerBehavior();
 		Item.BLOCK_ITEMS.put(Blocks.ICE_EERIE_RIND, blockItem);
 		Item.BLOCK_ITEMS.put(Blocks.LAVA_EERIE_RIND, blockItem);
 		Item.BLOCK_ITEMS.put(Blocks.WATER_EERIE_RIND, blockItem);
 		Item.BLOCK_ITEMS.put(Blocks.POWDER_SNOW_EERIE_RIND, blockItem);
 	}).group(ItemGroups.NATURAL).register("eerie_rind");
-	BlockItem TREACHEROUS_SAC = ItemRegistry.registrar(() -> new BlockItem(Blocks.TREACHEROUS_SAC, new FabricItemSettings())).group(ItemGroups.NATURAL).register("treacherous_sac");
-	BlockItem EERIE_BOUGH = ItemRegistry.registrar(() -> new BlockItem(Blocks.EERIE_BOUGH, new FabricItemSettings().fireproof())).group(ItemGroups.NATURAL).register("eerie_bough");
-	BlockItem TREACHEROUS_VINES = ItemRegistry.registrar(() -> new BlockItem(Blocks.TREACHEROUS_VINES, new FabricItemSettings())).group(ItemGroups.NATURAL).register("treacherous_vines");
+	BlockItem TREACHEROUS_SAC = ItemRegistry.registrar(() -> new BlockItem(Blocks.TREACHEROUS_SAC, new Item.Settings())).group(ItemGroups.NATURAL).register("treacherous_sac");
+	BlockItem EERIE_BOUGH = ItemRegistry.registrar(() -> new BlockItem(Blocks.EERIE_BOUGH, new Item.Settings().fireproof())).group(ItemGroups.NATURAL).register("eerie_bough");
+	BlockItem TREACHEROUS_VINES = ItemRegistry.registrar(() -> new BlockItem(Blocks.TREACHEROUS_VINES, new Item.Settings())).group(ItemGroups.NATURAL).register("treacherous_vines");
 }

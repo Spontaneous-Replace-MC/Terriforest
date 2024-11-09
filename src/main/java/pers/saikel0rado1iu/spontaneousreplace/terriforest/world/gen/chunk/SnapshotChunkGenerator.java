@@ -25,7 +25,7 @@
 package pers.saikel0rado1iu.spontaneousreplace.terriforest.world.gen.chunk;
 
 import com.google.common.collect.ImmutableList;
-import com.mojang.serialization.Codec;
+import com.mojang.serialization.MapCodec;
 import net.minecraft.registry.DynamicRegistryManager;
 import net.minecraft.registry.Registerable;
 import net.minecraft.registry.RegistryKey;
@@ -76,7 +76,7 @@ public class SnapshotChunkGenerator extends ClassicChunkGenerator {
 	}
 	
 	@Override
-	public Codec<? extends ChunkGenerator> getCodec() {
+	public MapCodec<? extends ChunkGenerator> getCodec() {
 		return ChunkGeneratorCodecs.SNAPSHOT;
 	}
 }

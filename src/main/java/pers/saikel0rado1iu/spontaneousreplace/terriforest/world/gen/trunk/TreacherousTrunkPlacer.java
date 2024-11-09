@@ -25,7 +25,7 @@
 package pers.saikel0rado1iu.spontaneousreplace.terriforest.world.gen.trunk;
 
 import com.google.common.collect.ImmutableList;
-import com.mojang.serialization.Codec;
+import com.mojang.serialization.MapCodec;
 import com.mojang.serialization.codecs.RecordCodecBuilder;
 import net.minecraft.block.BlockState;
 import net.minecraft.util.math.BlockPos;
@@ -47,7 +47,7 @@ import java.util.function.BiConsumer;
  * @since 1.0.0
  */
 public class TreacherousTrunkPlacer extends TrunkPlacer {
-	public static final Codec<TreacherousTrunkPlacer> CODEC = RecordCodecBuilder.create(instance -> fillTrunkPlacerFields(instance).apply(instance, TreacherousTrunkPlacer::new));
+	public static final MapCodec<TreacherousTrunkPlacer> CODEC = RecordCodecBuilder.mapCodec(instance -> fillTrunkPlacerFields(instance).apply(instance, TreacherousTrunkPlacer::new));
 	
 	public TreacherousTrunkPlacer(int baseHeight, int firstRandomHeight, int secondRandomHeight) {
 		super(baseHeight, firstRandomHeight, secondRandomHeight);

@@ -25,8 +25,8 @@
 package pers.saikel0rado1iu.spontaneousreplace.terriforest.world.gen.chunk;
 
 import com.mojang.serialization.Codec;
+import com.mojang.serialization.MapCodec;
 import com.mojang.serialization.codecs.RecordCodecBuilder;
-import net.minecraft.util.dynamic.Codecs;
 import net.minecraft.world.biome.source.BiomeSource;
 import net.minecraft.world.biome.source.FixedBiomeSource;
 import net.minecraft.world.gen.chunk.ChunkGeneratorSettings;
@@ -45,16 +45,20 @@ import static pers.saikel0rado1iu.silk.api.landform.gen.chunk.ChunkGeneratorUpgr
  * @since 1.0.0
  */
 public interface ChunkGeneratorCodecs extends ChunkGeneratorCodecRegistry {
-	Codec<ClassicChunkGenerator> CLASSIC = ChunkGeneratorCodecRegistry.registrar(ClassicChunkGenerator.class, () -> RecordCodecBuilder.create(instance -> instance.group(
-					BiomeSource.CODEC.fieldOf("biome_source").forGetter(ClassicChunkGenerator::getBiomeSource),
-					Codecs.createStrictOptionalFieldCodec(FixedBiomeSource.CODEC.listOf(), "fixed_biome_sources", List.of()).forGetter(ClassicChunkGenerator::additionalBiomeSources),
-					ChunkGeneratorSettings.REGISTRY_CODEC.fieldOf("settings").forGetter(ClassicChunkGenerator::getSettings),
-					Codecs.createStrictOptionalFieldCodec(Codec.STRING, VERSION_KEY, NON_VERSION).forGetter(ClassicChunkGenerator::version))
-			.apply(instance, instance.stable(ClassicChunkGenerator::new)))).register("classic");
-	Codec<SnapshotChunkGenerator> SNAPSHOT = ChunkGeneratorCodecRegistry.registrar(SnapshotChunkGenerator.class, () -> RecordCodecBuilder.create(instance -> instance.group(
-					BiomeSource.CODEC.fieldOf("biome_source").forGetter(SnapshotChunkGenerator::getBiomeSource),
-					Codecs.createStrictOptionalFieldCodec(FixedBiomeSource.CODEC.listOf(), "fixed_biome_sources", List.of()).forGetter(SnapshotChunkGenerator::additionalBiomeSources),
-					ChunkGeneratorSettings.REGISTRY_CODEC.fieldOf("settings").forGetter(SnapshotChunkGenerator::getSettings),
-					Codecs.createStrictOptionalFieldCodec(Codec.STRING, VERSION_KEY, NON_VERSION).forGetter(SnapshotChunkGenerator::version))
-			.apply(instance, instance.stable(SnapshotChunkGenerator::new)))).register("snapshot");
+	MapCodec<ClassicChunkGenerator> CLASSIC = ChunkGeneratorCodecRegistry.registrar(ClassicChunkGenerator.class, () ->
+					RecordCodecBuilder.mapCodec(instance -> instance.group(
+									BiomeSource.CODEC.fieldOf("biome_source").forGetter(ClassicChunkGenerator::getBiomeSource),
+									FixedBiomeSource.CODEC.codec().listOf().optionalFieldOf("fixed_biome_sources", List.of()).forGetter(ClassicChunkGenerator::additionalBiomeSources),
+									ChunkGeneratorSettings.REGISTRY_CODEC.fieldOf("settings").forGetter(ClassicChunkGenerator::getSettings),
+									Codec.STRING.optionalFieldOf(VERSION_KEY, NON_VERSION).forGetter(ClassicChunkGenerator::version))
+							.apply(instance, instance.stable(ClassicChunkGenerator::new))))
+			.register("classic");
+	MapCodec<SnapshotChunkGenerator> SNAPSHOT = ChunkGeneratorCodecRegistry.registrar(SnapshotChunkGenerator.class, () ->
+					RecordCodecBuilder.mapCodec(instance -> instance.group(
+									BiomeSource.CODEC.fieldOf("biome_source").forGetter(SnapshotChunkGenerator::getBiomeSource),
+									FixedBiomeSource.CODEC.codec().listOf().optionalFieldOf("fixed_biome_sources", List.of()).forGetter(SnapshotChunkGenerator::additionalBiomeSources),
+									ChunkGeneratorSettings.REGISTRY_CODEC.fieldOf("settings").forGetter(SnapshotChunkGenerator::getSettings),
+									Codec.STRING.optionalFieldOf(VERSION_KEY, NON_VERSION).forGetter(SnapshotChunkGenerator::version))
+							.apply(instance, instance.stable(SnapshotChunkGenerator::new))))
+			.register("snapshot");
 }

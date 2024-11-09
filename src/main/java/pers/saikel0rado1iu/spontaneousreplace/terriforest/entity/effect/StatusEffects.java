@@ -25,6 +25,8 @@
 package pers.saikel0rado1iu.spontaneousreplace.terriforest.entity.effect;
 
 
+import net.minecraft.entity.effect.StatusEffect;
+import net.minecraft.registry.entry.RegistryEntry;
 import pers.saikel0rado1iu.silk.api.spinningjenny.StatusEffectRegistry;
 
 /**
@@ -35,5 +37,5 @@ import pers.saikel0rado1iu.silk.api.spinningjenny.StatusEffectRegistry;
  * @since 1.0.0
  */
 public interface StatusEffects extends StatusEffectRegistry {
-	Acidize ACIDIZE = StatusEffectRegistry.registrar(Acidize::new).register("acidize");
+	RegistryEntry<StatusEffect> ACIDIZE = RegistryEntry.of(StatusEffectRegistry.registrar(Acidize::new).register("acidize"));
 }

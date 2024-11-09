@@ -38,8 +38,8 @@ import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.sound.SoundCategory;
 import net.minecraft.stat.Stats;
-import net.minecraft.util.ActionResult;
 import net.minecraft.util.Hand;
+import net.minecraft.util.ItemActionResult;
 import net.minecraft.util.hit.BlockHitResult;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.random.Random;
@@ -87,7 +87,7 @@ public class TreacherousSacBlock extends TntLikeBlock {
 		super.randomDisplayTick(state, world, pos, random);
 		if (random.nextInt(3) != 0) return;
 		java.util.Random randomValue = new java.util.Random();
-		ParticleUtil.addEffectParticle(world, StatusEffects.ACIDIZE,
+		ParticleUtil.addEffectParticle(world, StatusEffects.ACIDIZE.value(),
 				pos.getX() + EntityUtil.POS_SHIFTING + randomValue.nextDouble(-0.5, 0.5),
 				pos.getY() + EntityUtil.POS_SHIFTING + randomValue.nextDouble(-0.5, 0.5),
 				pos.getZ() + EntityUtil.POS_SHIFTING + randomValue.nextDouble(-0.5, 0.5));
@@ -101,7 +101,7 @@ public class TreacherousSacBlock extends TntLikeBlock {
 		if (!world.isClient && world.random.nextFloat() < fallDistance - 0.5F
 				&& entity instanceof LivingEntity
 				&& entity.getWidth() * entity.getWidth() * entity.getHeight() > 0.512F
-				&& new java.util.Random().nextInt(TreacherousData.STABILITY) == 0) {
+				&& new java.util.Random().nextInt(TreacherousData.STABILITY.applyAsInt(state)) == 0) {
 			world.removeBlock(pos, false);
 			primeTnt(world, pos, Optional.of((LivingEntity) entity));
 		}
@@ -112,17 +112,16 @@ public class TreacherousSacBlock extends TntLikeBlock {
 	 * 如果被斧右键使用则会爆炸
 	 */
 	@Override
-	public ActionResult onUse(BlockState state, World world, BlockPos pos, PlayerEntity player, Hand hand, BlockHitResult hit) {
-		ItemStack stack = player.getStackInHand(hand);
+	protected ItemActionResult onUseWithItem(ItemStack stack, BlockState state, World world, BlockPos pos, PlayerEntity player, Hand hand, BlockHitResult hit) {
 		Item item = stack.getItem();
-		if (!(item instanceof AxeItem)) return onUseSuper(state, world, pos, player, hand, hit);
+		if (!(item instanceof AxeItem)) return onUseWithItemSuper(stack, state, world, pos, player, hand, hit);
 		if (!world.isClient) {
-			stack.damage(1, player, p -> p.sendToolBreakStatus(hand));
+			stack.damage(1, player, LivingEntity.getSlotForHand(hand));
 			world.setBlockState(pos, Blocks.AIR.getDefaultState(), Block.NOTIFY_ALL_AND_REDRAW);
 			primeTnt(world, pos, Optional.of(player));
 		}
 		player.incrementStat(Stats.USED.getOrCreateStat(item));
-		return ActionResult.success(world.isClient);
+		return ItemActionResult.success(world.isClient);
 	}
 	
 	/**

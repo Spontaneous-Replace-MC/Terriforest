@@ -26,7 +26,7 @@ package pers.saikel0rado1iu.spontaneousreplace.terriforest.world.gen.chunk;
 
 import com.google.common.collect.ImmutableList;
 import com.mojang.datafixers.util.Pair;
-import com.mojang.serialization.Codec;
+import com.mojang.serialization.MapCodec;
 import net.minecraft.block.BlockState;
 import net.minecraft.registry.DynamicRegistryManager;
 import net.minecraft.registry.Registerable;
@@ -209,16 +209,15 @@ public class ClassicChunkGenerator extends ModifiedChunkGenerator {
 	 */
 	@Override
 	public Optional<BlockState> getTerrainNoise(BlockPos pos, Optional<BlockState> originBlock, int estimateSurfaceHeight) {
-		Optional<BlockState> state = originBlock;
-		Map.Entry<ActionResult, Optional<BlockState>> result = ModifyChunkGeneratorCustomEvents.MODIFY_GET_TERRAIN_NOISE.invoker().getTerrainNoise(this, state, pos, originBlock, estimateSurfaceHeight);
-		if (ActionResult.FAIL == result.getKey()) return state;
+		Map.Entry<ActionResult, Optional<BlockState>> result = ModifyChunkGeneratorCustomEvents.MODIFY_GET_TERRAIN_NOISE.invoker().getTerrainNoise(this, originBlock, pos, originBlock, estimateSurfaceHeight);
+		if (ActionResult.FAIL == result.getKey()) return originBlock;
 		return result.getValue();
 	}
 	
 	@Override
-	public Codec<? extends ChunkGenerator> getCodec() {
-		Codec<? extends ChunkGenerator> codec = ChunkGeneratorCodecs.CLASSIC;
-		Map.Entry<ActionResult, Codec<? extends ChunkGenerator>> result = ModifyChunkGeneratorUpgradableEvents.MODIFY_GET_CODEC.invoker().getCodec(this, codec);
+	public MapCodec<? extends ChunkGenerator> getCodec() {
+		MapCodec<? extends ChunkGenerator> codec = ChunkGeneratorCodecs.CLASSIC;
+		Map.Entry<ActionResult, MapCodec<? extends ChunkGenerator>> result = ModifyChunkGeneratorUpgradableEvents.MODIFY_GET_CODEC.invoker().getCodec(this, codec);
 		if (ActionResult.FAIL == result.getKey()) return codec;
 		return result.getValue();
 	}

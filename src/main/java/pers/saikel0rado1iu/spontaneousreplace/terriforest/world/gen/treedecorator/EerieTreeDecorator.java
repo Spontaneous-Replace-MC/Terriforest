@@ -24,7 +24,7 @@
 
 package pers.saikel0rado1iu.spontaneousreplace.terriforest.world.gen.treedecorator;
 
-import com.mojang.serialization.Codec;
+import com.mojang.serialization.MapCodec;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.Direction;
 import net.minecraft.world.BlockView;
@@ -42,14 +42,14 @@ import java.util.Random;
  * @since 1.0.0
  */
 public class EerieTreeDecorator extends TreeDecorator {
-	public static final Codec<EerieTreeDecorator> CODEC = Codec.unit(EerieTreeDecorator::new);
+	public static final MapCodec<EerieTreeDecorator> CODEC = MapCodec.unit(EerieTreeDecorator::new);
 	
 	public EerieTreeDecorator() {
 	}
 	
 	@Override
 	public void generate(Generator generator) {
-		BlockPos pos = generator.getLogPositions().get(0).up();
+		BlockPos pos = generator.getLogPositions().getFirst().up();
 		if (new Random().nextBoolean()) {
 			for (Direction side : Direction.Type.HORIZONTAL) {
 				BlockPos targetPos = pos.offset(side, 1);

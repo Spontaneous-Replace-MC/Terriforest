@@ -24,7 +24,6 @@
 
 package pers.saikel0rado1iu.spontaneousreplace.terriforest.block.entity;
 
-import net.fabricmc.fabric.api.object.builder.v1.block.entity.FabricBlockEntityTypeBuilder;
 import net.minecraft.block.entity.BlockEntityType;
 import pers.saikel0rado1iu.silk.api.spinningjenny.BlockEntityTypeRegistry;
 import pers.saikel0rado1iu.spontaneousreplace.terriforest.block.Blocks;
@@ -37,5 +36,5 @@ import pers.saikel0rado1iu.spontaneousreplace.terriforest.block.Blocks;
  * @since 1.0.0
  */
 public interface BlockEntityTypes extends BlockEntityTypeRegistry {
-	BlockEntityType<EerieBoughBlockEntity> EERIE_BOUGH = BlockEntityTypeRegistry.registrar(() -> FabricBlockEntityTypeBuilder.create(EerieBoughBlockEntity::new, Blocks.EERIE_BOUGH).build()).register("eerie_bough");
+	BlockEntityType<EerieBoughBlockEntity> EERIE_BOUGH = BlockEntityTypeRegistry.registrar(() -> BlockEntityType.Builder.create(EerieBoughBlockEntity::new, Blocks.EERIE_BOUGH).build()).register("eerie_bough");
 }

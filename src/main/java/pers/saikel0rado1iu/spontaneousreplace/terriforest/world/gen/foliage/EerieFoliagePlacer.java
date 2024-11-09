@@ -27,6 +27,7 @@ package pers.saikel0rado1iu.spontaneousreplace.terriforest.world.gen.foliage;
 import com.google.common.collect.ImmutableList;
 import com.google.common.collect.Lists;
 import com.mojang.serialization.Codec;
+import com.mojang.serialization.MapCodec;
 import com.mojang.serialization.codecs.RecordCodecBuilder;
 import net.minecraft.block.BlockState;
 import net.minecraft.util.math.BlockPos;
@@ -52,7 +53,7 @@ import java.util.function.BiFunction;
  * @since 1.0.0
  */
 public class EerieFoliagePlacer extends BlobFoliagePlacer {
-	public static final Codec<EerieFoliagePlacer> CODEC = RecordCodecBuilder.create(instance ->
+	public static final MapCodec<EerieFoliagePlacer> CODEC = RecordCodecBuilder.mapCodec(instance ->
 			fillFoliagePlacerFields(instance)
 					.and(Codec.intRange(0, 16).fieldOf("height").forGetter(placer -> placer.height))
 					.apply(instance, EerieFoliagePlacer::new));

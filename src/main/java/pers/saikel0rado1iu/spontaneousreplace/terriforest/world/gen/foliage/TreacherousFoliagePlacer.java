@@ -24,7 +24,7 @@
 
 package pers.saikel0rado1iu.spontaneousreplace.terriforest.world.gen.foliage;
 
-import com.mojang.serialization.Codec;
+import com.mojang.serialization.MapCodec;
 import com.mojang.serialization.codecs.RecordCodecBuilder;
 import net.minecraft.block.AbstractBlock;
 import net.minecraft.util.math.BlockPos;
@@ -46,7 +46,7 @@ import java.util.Set;
  * @since 1.0.0
  */
 public class TreacherousFoliagePlacer extends FoliagePlacer {
-	public static final Codec<TreacherousFoliagePlacer> CODEC = RecordCodecBuilder.create(instance -> fillFoliagePlacerFields(instance).apply(instance, TreacherousFoliagePlacer::new));
+	public static final MapCodec<TreacherousFoliagePlacer> CODEC = RecordCodecBuilder.mapCodec(instance -> fillFoliagePlacerFields(instance).apply(instance, TreacherousFoliagePlacer::new));
 	
 	public TreacherousFoliagePlacer(IntProvider radius, IntProvider offset) {
 		super(radius, offset);

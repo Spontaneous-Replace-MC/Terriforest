@@ -26,8 +26,11 @@ package pers.saikel0rado1iu.spontaneousreplace.terriforest.data;
 
 import net.fabricmc.fabric.api.datagen.v1.FabricDataOutput;
 import net.fabricmc.fabric.api.datagen.v1.provider.FabricBlockLootTableProvider;
+import net.minecraft.registry.RegistryWrapper;
 import pers.saikel0rado1iu.silk.api.generate.data.LootTableGenUtil;
 import pers.saikel0rado1iu.spontaneousreplace.terriforest.block.Blocks;
+
+import java.util.concurrent.CompletableFuture;
 
 import static net.minecraft.block.Blocks.*;
 
@@ -40,8 +43,8 @@ import static net.minecraft.block.Blocks.*;
  */
 public interface LootTableGenerator {
 	final class Block extends FabricBlockLootTableProvider {
-		Block(FabricDataOutput dataOutput) {
-			super(dataOutput);
+		Block(FabricDataOutput dataOutput, CompletableFuture<RegistryWrapper.WrapperLookup> registryLookup) {
+			super(dataOutput, registryLookup);
 		}
 		
 		@Override
