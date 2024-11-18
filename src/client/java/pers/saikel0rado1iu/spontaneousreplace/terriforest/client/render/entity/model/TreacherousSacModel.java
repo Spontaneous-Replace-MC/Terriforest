@@ -25,9 +25,7 @@
 package pers.saikel0rado1iu.spontaneousreplace.terriforest.client.render.entity.model;
 
 import net.minecraft.client.model.*;
-import net.minecraft.client.render.VertexConsumer;
 import net.minecraft.client.render.entity.model.SinglePartEntityModel;
-import net.minecraft.client.util.math.MatrixStack;
 import pers.saikel0rado1iu.spontaneousreplace.terriforest.client.render.entity.animation.TreacherousSacAnimations;
 import pers.saikel0rado1iu.spontaneousreplace.terriforest.entity.TreacherousSacEntity;
 
@@ -95,11 +93,6 @@ public class TreacherousSacModel<T extends TreacherousSacEntity> extends SingleP
 		bone8.xScale = bone8.yScale = bone8.zScale = 1;
 		bone9.xScale = bone9.yScale = bone9.zScale = 1;
 		updateAnimation(entity.explodeAnimationState, TreacherousSacAnimations.EXPLODE, animationProgress);
-	}
-	
-	@Override
-	public void render(MatrixStack matrices, VertexConsumer vertices, int light, int overlay, float red, float green, float blue, float alpha) {
-		getPart().render(matrices, vertices, light, overlay, red, green, blue, alpha);
 	}
 	
 	@Override
